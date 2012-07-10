@@ -1,7 +1,8 @@
 /*global require:true */
+var nodemock = require("nodemock");
+var jQuery = nodemock.mock('jQuery');
+var document = nodemock.mock('document');
 var ad_tester = require('../lib/ad_tester.js');
-var jQuery = require('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
-var document = document;
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -25,9 +26,6 @@ var document = document;
 
 exports['Ad_Tester' ] = {
   setUp: function(done) {
-    var jQuery = require('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
-    var document = document;
-    // setup here
     done();
   },
   'test url' : function(test) {
@@ -51,15 +49,14 @@ exports['Ad_Tester' ] = {
       test_a.ad_url('newurl');
       test.equal(test_a.ad_url() , 'newurl', 'should be newurl');
       test.done();
-  }
-  /* FIXME fuck, i need to mock up the document object? FML
+  },
   'test creates iframe' : function(test) {
       test.expect(2);
+      //well, this is useless, everything I want to test should be mocked
       var test_a = ad_tester.Ad_Tester('testurl_a');
       test.notEqual(test_a.iframe(), true, 'iframe should be empty');
       test_a.make();
       test.equal(typeof(test_a.iframe()) , 'object', 'should be testurl_a');
       test.done();
   }
-  */
 };
