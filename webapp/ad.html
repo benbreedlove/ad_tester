@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            var page = document.location.search;
+        </script>
+    </head>
+    <body>
+        <script>
+            var oas="http://oascentral.motherjones.com/RealMedia/ads/";
+            var RN = new String (Math.random());
+            var RNS = RN.substring (2, 11);
+
+            sitepage = 'motherjones.com/' + page + '.html/1' + RNS;
+            output = ('<SCRIPT LANGUAGE=javascript SRC="'
+                +oas+"adstream_jx.ads/"+sitepage+'">');
+            output += ('<!-- -->');
+            output += ('</SC' + 'RIPT>');
+            output += ("<!-- -->");
+            document.write(output);
+        </script>
+    </body>
+</html>
