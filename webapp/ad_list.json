@@ -1,0 +1,4 @@
+var ads = [
+    "ads/thingy.html", 
+    "ads/hal/aha.html"
+]
