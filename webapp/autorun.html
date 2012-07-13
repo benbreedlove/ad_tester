@@ -2,14 +2,12 @@
     <head>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="../lib/ad_tester.js" type="text/javascript"></script>
-        <script src="../lib/json2.js" type="text/javascript"></script>
         <script type="text/javascript" src="ad_list.json"></script>
+        <script src="../lib/json2.js" type="text/javascript"></script>
     </head>
     <body>
-        <label for="test_em">Test all ads</label>
-        <input id="test_em" type="button" value="Go!"></input>
         <script>
-            jQuery('#test_em').click(function() {
+            jQuery(document).ready(function() {
                 for (var i = 0; i < ads.length; i++) {
                     new Ad_Tester(ads[i], 10).init().make().run();
                 }
